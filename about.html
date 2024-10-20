@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Jordy Meijer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme + '-theme');
+            } else {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+</head>
+<body class="about-page">
+    <!-- Header section with navigation -->
+    <header>
+        <nav>
+            <!-- Profile image -->
+            <img src="images/profilepicture.jpg" alt="Jordy Meijer">
+            <!-- Your name -->
+            <h1>Jordy Meijer</h1>
+            <!-- Navigation links -->
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <!-- Theme toggle buttons -->
+            <div class="theme-toggle">
+                <button id="light-mode"><i class="fas fa-sun"></i></button>
+                <button id="dark-mode"><i class="fas fa-moon"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- About Me section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="bio">
+                    <p>Hello! I'm Jordy Meijer, a passionate software developer student at Windesheim Flevoland. I love coding and enjoy learning new technologies.</p>
+                    <p>In my free time, I enjoy working out, spending time with my family and friends, working on personal projects, and continuously learning new things.</p>
+                    <p>Thank you for visiting my portfolio website. I hope you enjoy exploring my work.</p>
+                </div>
+                
+                <!-- Skills summary -->
+                <div class="skills-summary">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>JavaScript</li>
+                        <li>HTML & CSS</li>
+                        <li>PHP & MySQL</li>
+                    </ul>
+                </div>
+
+                <!-- Experience and CV -->
+                <div class="experience">
+                    <h3>Experience</h3>
+                    <p>While I have not yet built any real web applications or websites, I have worked on various projects as part of my studies and personal development. My experience includes front-end and back-end development.</p>
+                    <a href="cv/Jordy_Meijer_CV_2024.pdf" class="download-cv-btn" download>Download My CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Back-to-top button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>

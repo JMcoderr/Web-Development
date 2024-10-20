@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Jordy Meijer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme + '-theme');
+            } else {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <nav>
+            <!-- Profile image -->
+            <img src="images/profilepicture.jpg" alt="Jordy Meijer">
+            <!-- Your name -->
+            <h1>Jordy Meijer</h1>
+            <!-- Navigation links -->
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <!-- Theme toggle buttons -->
+            <div class="theme-toggle">
+                <button id="light-mode"><i class="fas fa-sun"></i></button>
+                <button id="dark-mode"><i class="fas fa-moon"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Portfolio section -->
+        <section id="portfolio">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects">
+                    <!-- Project 1 -->
+                    <div class="project" data-category="web">
+                        <a href="project1.html">
+                            <img src="images/project1.jpg" alt="Project 1">
+                            <h3>Project Title 1</h3>
+                            <p>Short description of the project.</p>
+                        </a>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project" data-category="javascript">
+                        <a href="project2.html">
+                            <img src="images/project2.jpg" alt="Project 2">
+                            <h3>Project Title 2</h3>
+                            <p>Short description of the project.</p>
+                        </a>
+                    </div>
+                    <!-- Add more projects as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Back-to-top button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
