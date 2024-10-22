@@ -20,100 +20,92 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    min-height: 100vh;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    overflow-y: scroll;
+    box-sizing: border-box;
 }
 
 header {
-    width: 250px;
-    background-color: var(--light-background-color);
-    color: var(--text-color);
+    background-color: #333;
+    color: #fff;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
     position: fixed;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav {
+header nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     width: 100%;
 }
 
-nav img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
+header nav img {
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav h1 {
+header nav h1 {
     margin: 0;
+    font-size: 24px;
     margin-bottom: 20px;
     font-family: 'Georgia', serif;
     text-align: center;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    padding: 0;
     width: 100%;
     text-align: center;
 }
 
-nav ul li {
+header nav ul li {
+    margin: 0 10px;
     margin-bottom: 10px;
 }
 
-nav ul li a {
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: inherit;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
+    text-decoration: underline;
     background-color: var(--primary-color);
     color: #fff;
 }
 
 .theme-toggle {
+    display: flex;
+    align-items: center;
     margin-top: 20px;
 }
 
 .theme-toggle button {
     background: none;
     border: none;
-    cursor: pointer;
-    font-size: 1.5em;
-    margin-right: 10px;
-    transition: color 0.3s;
-}
-
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: #333;
     color: #fff;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
+    font-size: 20px;
     cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
 }
 
 .theme-toggle button:hover {
@@ -129,13 +121,167 @@ main {
     overflow-y: auto; /* Ensure the main content can scroll if it overflows */
 }
 
+#portfolio {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-section {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.filter-section h3 {
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h4 {
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#filter-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#filter-btn i {
+    margin-left: 10px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+}
+
+.project-item h3 {
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.project-item p {
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.project {
+    background-color: var(--light-background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.project h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.light-theme .project a {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.light-theme .project a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .project a {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 2px solid #e0e0e0;
+}
+
+.dark-theme .project a:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+#back-to-top i {
+    font-size: 20px;
+}
+
 footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
     padding: 10px;
-    background-color: var(--light-background-color);
-    width: 100%;
     position: fixed;
     bottom: 0;
+    width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -146,6 +292,8 @@ footer {
     --text-color: #333;
     --light-background-color: #fff;
     --light-gradient: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 .light-theme header,
@@ -161,6 +309,8 @@ footer {
     --text-color: #e0e0e0;
     --light-background-color: #1e1e1e;
     --dark-gradient: linear-gradient(135deg, #121212, #1e1e1e);
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 .dark-theme header,
@@ -228,67 +378,36 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Projects section styles */
-#portfolio {
-    padding: 20px;
-}
-
-.project {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: var(--light-background-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.project h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.project a {
+/* Download My CV button styles */
+.download-cv-btn {
     display: inline-block;
-    margin-right: 10px;
     padding: 10px 20px;
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    text-align: center;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.light-theme .project a {
+.light-theme .download-cv-btn {
     background-color: #fff;
     color: #333;
     border: 2px solid #333;
 }
 
-.light-theme .project a:hover {
+.light-theme .download-cv-btn:hover {
     background-color: #333;
     color: #fff;
 }
 
-.dark-theme .project a {
+.dark-theme .download-cv-btn {
     background-color: #333;
     color: #e0e0e0;
     border: 2px solid #e0e0e0;
 }
 
-.dark-theme .project a:hover {
+.dark-theme .download-cv-btn:hover {
     background-color: #e0e0e0;
     color: #333;
 }
@@ -359,74 +478,6 @@ footer {
 .dark-theme #contact-form input::placeholder,
 .dark-theme #contact-form textarea::placeholder {
     color: #aaa;
-}
-
-/* View Portfolio button styles */
-.view-portfolio-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.light-theme .view-portfolio-btn {
-    background-color: #fff;
-    color: #333;
-    border: 2px solid #333;
-}
-
-.light-theme .view-portfolio-btn:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-theme .view-portfolio-btn {
-    background-color: #333;
-    color: #e0e0e0;
-    border: 2px solid #e0e0e0;
-}
-
-.dark-theme .view-portfolio-btn:hover {
-    background-color: #e0e0e0;
-    color: #333;
-}
-
-/* Download My CV button styles */
-.download-cv-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.light-theme .download-cv-btn {
-    background-color: #fff;
-    color: #333;
-    border: 2px solid #333;
-}
-
-.light-theme .download-cv-btn:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-theme .download-cv-btn {
-    background-color: #333;
-    color: #e0e0e0;
-    border: 2px solid #e0e0e0;
-}
-
-.dark-theme .download-cv-btn:hover {
-    background-color: #e0e0e0;
-    color: #333;
 }
 
 /* Ensure footer is always visible on the About Me page */
