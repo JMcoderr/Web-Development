@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portfolio.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script>
@@ -19,6 +20,9 @@
     </script>
 </head>
 <body>
+    <!-- Scroll Indicator -->
+    <div id="scroll-indicator"></div>
+
     <!-- Header section with navigation -->
     <header>
         <nav>
@@ -46,97 +50,109 @@
         <!-- Portfolio section -->
         <section id="portfolio">
             <h2>My Projects</h2>
-            <button id="filter-btn">Filter <i class="fas fa-filter"></i></button>
-            <div class="filter-section" id="filter-section">
-                <h3>Filter Projects</h3>
-                <div class="filter-group">
-                    <h4>Code Language</h4>
-                    <label><input type="checkbox" value="html-css" onchange="filterProjects()"> HTML/CSS</label>
-                    <label><input type="checkbox" value="js" onchange="filterProjects()"> JavaScript</label>
-                    <label><input type="checkbox" value="php" onchange="filterProjects()"> PHP</label>
-                    <label><input type="checkbox" value="mysql" onchange="filterProjects()"> MySQL</label>
-                </div>
-                <div class="filter-group">
-                    <h4>Date Completed</h4>
-                    <label><input type="checkbox" value="2023" onchange="filterProjects()"> 2023</label>
-                    <label><input type="checkbox" value="2024" onchange="filterProjects()"> 2024</label>
-                    <label><input type="checkbox" value="2025" onchange="filterProjects()"> 2025</label>
-                </div>
-                <div class="filter-group">
-                    <h4>Client Type</h4>
-                    <label><input type="checkbox" value="personal" onchange="filterProjects()"> Personal Project</label>
-                    <label><input type="checkbox" value="education" onchange="filterProjects()"> Education</label>
-                </div>
-                <div class="filter-group">
-                    <h4>Project Status</h4>
-                    <label><input type="checkbox" value="completed" onchange="filterProjects()"> Completed</label>
-                    <label><input type="checkbox" value="in-progress" onchange="filterProjects()"> In Progress</label>
-                    <label><input type="checkbox" value="prototype" onchange="filterProjects()"> Prototype/Concept</label>
-                </div>
-            </div>
             <div class="project-grid">
-                <div class="project" data-category="html-css" data-date="2023" data-client="personal" data-status="completed">
-                    <a href="project1.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project1.jpg" alt="Project 1">
                         <h3>Project 1</h3>
-                        <p>Short description of Project 1.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="js" data-date="2024" data-client="education" data-status="in-progress">
-                    <a href="project2.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project2.jpg" alt="Project 2">
                         <h3>Project 2</h3>
-                        <p>Short description of Project 2.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="php" data-date="2025" data-client="personal" data-status="prototype">
-                    <a href="project3.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project3.jpg" alt="Project 3">
                         <h3>Project 3</h3>
-                        <p>Short description of Project 3.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="mysql" data-date="2023" data-client="education" data-status="completed">
-                    <a href="project4.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project4.jpg" alt="Project 4">
                         <h3>Project 4</h3>
-                        <p>Short description of Project 4.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="html-css" data-date="2024" data-client="personal" data-status="in-progress">
-                    <a href="project5.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project5.jpg" alt="Project 5">
                         <h3>Project 5</h3>
-                        <p>Short description of Project 5.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="js" data-date="2025" data-client="education" data-status="prototype">
-                    <a href="project6.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project6.jpg" alt="Project 6">
                         <h3>Project 6</h3>
-                        <p>Short description of Project 6.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="php" data-date="2023" data-client="personal" data-status="completed">
-                    <a href="project7.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project7.jpg" alt="Project 7">
                         <h3>Project 7</h3>
-                        <p>Short description of Project 7.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
-                <div class="project" data-category="mysql" data-date="2024" data-client="education" data-status="in-progress">
-                    <a href="project8.html">
+                <div class="project">
+                    <a href="no-project.html">
                         <img src="images/project8.jpg" alt="Project 8">
                         <h3>Project 8</h3>
-                        <p>Short description of Project 8.</p>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="no-project.html">
+                        <img src="images/project9.jpg" alt="Project 8">
+                        <h3>Project 9</h3>
+                        <p>Project is yet to be added.</p>
+                        <p><strong>Technologies:</strong> </p>
+                        <p><strong>Year:</strong> </p>
+                        <p><strong>Client:</strong> </p>
+                        <p><strong>Status:</strong> </p>
                     </a>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Back-to-top button -->
-    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Footer section -->
     <footer>

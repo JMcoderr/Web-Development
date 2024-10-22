@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.classList.add(savedTheme + '-theme');
-            } else {
-                document.documentElement.classList.add('light-theme');
-            }
-        })();
-    </script>
 </head>
 <body>    
     <!-- Header section with navigation -->
@@ -68,9 +58,6 @@
         </section>
     </main>
     
-    <!-- Back-to-top button -->
-    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
-
     <!-- Footer section -->
     <footer>
         <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
@@ -110,6 +97,13 @@
             document.documentElement.classList.add('dark-theme');
             localStorage.setItem('theme', 'dark');
         });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.classList.add(savedTheme + '-theme');
+        } else {
+            document.documentElement.classList.add('light-theme');
+        }
     </script>
 </body>
 </html>
