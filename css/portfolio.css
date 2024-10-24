@@ -15,18 +15,14 @@ body, h1, h2, h3, p, ul, li, a, img, button {
 body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
     line-height: 1.8;
-}
-
-/* Container for Sidebar and Main Content */
-.container {
-    display: flex;
-    flex: 1;
+    scroll-behavior: smooth;
 }
 
 /* Header Styling */
@@ -45,7 +41,7 @@ header {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     transition: width 0.3s ease-in-out;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Slight transparency */
 }
 
 header:hover {
@@ -68,8 +64,8 @@ header h1 {
     font-size: 24px;
     margin-bottom: 30px;
     color: var(--primary-color);
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+    font-weight: bold; /* Make the text bold */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -99,6 +95,20 @@ header nav a:hover {
     padding-top: 20px;
 }
 
+.theme-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.2);
+    color: var(--primary-color);
+}
+
+/* Theme Toggle Slider */
 .theme-toggle .slider {
     position: relative;
     width: 60px;
@@ -110,7 +120,7 @@ header nav a:hover {
 }
 
 .theme-toggle .slider::before {
-    content: '☀️';
+    content: '☀️'; /* Sun emoji */
     position: absolute;
     width: 26px;
     height: 26px;
@@ -133,16 +143,96 @@ header nav a:hover {
 }
 
 .theme-toggle input:checked + .slider::before {
-    content: '🌙';
+    content: '🌙'; /* Moon emoji */
     transform: translateX(30px);
-    background-color: black;
 }
 
 /* Main Content Styling */
 main {
+    margin-left: 260px;
+    padding: 60px 50px;
     flex: 1;
-    margin-left: 260px; /* Ensure it is to the right of the sidebar */
-    padding: 20px;
+    background-color: var(--main-background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 80px;
+    background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
+}
+
+/* Portfolio Section */
+#portfolio .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#portfolio h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns */
+    gap: 20px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project h3 {
+    font-size: 24px;
+    margin: 15px;
+    color: var(--primary-color);
+}
+
+.project p {
+    font-size: 16px;
+    margin: 15px;
+    color: var(--text-color);
+}
+
+/* Light Theme */
+.light-theme #portfolio .container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme #portfolio h2, .light-theme .project h3, .light-theme .project p {
+    color: #333;
+}
+
+/* Dark Theme */
+.dark-theme #portfolio .container {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme #portfolio h2, .dark-theme .project h3, .dark-theme .project p {
+    color: #fff;
 }
 
 /* Footer Styling */
@@ -152,8 +242,8 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    left: 0;
+    width: 100%; /* Make footer span the entire horizontal page */
+    left: 0; /* Adjust left position */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     background: linear-gradient(135deg, var(--footer-background-color) 0%, var(--background-gradient-color) 100%);
@@ -170,9 +260,6 @@ footer {
     --primary-color: #333;
     --highlight-color: #666666;
     --highlight-text-color: #ffffff;
-    --button-background-color: #f0f0f0;
-    --button-text-color: #000000;
-    --button-border-color: #333;
 }
 
 /* Dark Theme */
@@ -186,25 +273,128 @@ footer {
     --primary-color: #ffffff;
     --highlight-color: #333333;
     --highlight-text-color: #ffffff;
-    --button-background-color: #ffffff;
-    --button-text-color: #000000;
-    --button-border-color: #ffffff;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    border: 3px solid var(--background-color);
+}
+
+/* Scroll Progress Indicator */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--highlight-color);
+    z-index: 1000;
+    transition: width 0.25s;
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--primary-color);
+    color: var(--highlight-text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: transform 0.3s;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* Dark theme improvements */
 .dark-theme header {
+    background-color: #000000; /* Same black color for header */
     box-shadow: 2px 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .dark-theme main {
-    background: linear-gradient(135deg, #121212 0%, #1f1f1f 100%);
+    background-color: #121212; /* Darker main background */
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
 }
 
 .dark-theme footer {
+    background-color: #000000; /* Same black color for footer */
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
 }
 
-.dark-theme header nav a:hover {
-    background-color: var(--highlight-color);
-    color: var(--highlight-text-color);
-    transform: translateX(10px);
-}   
+.dark-theme .theme-toggle button {
+    color: white; /* White theme toggle buttons */
+}
+
+.dark-theme .project {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .project:hover {
+    box-shadow: 0 16px 32px rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme .project img {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Light drop shadow */
+}
+
+.dark-theme #back-to-top {
+    background-color: white; /* White background for dark theme */
+    color: black; /* Black text for contrast */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Light drop shadow */
+}
+
+/* Dark theme styles */
+.dark-theme .theme-toggle .slider {
+    background-color: #333;
+}
+
+.dark-theme .theme-toggle input:checked + .slider {
+    background-color: white;
+}
+
+.dark-theme .theme-toggle input:checked + .slider::before {
+    background-color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    main {
+        margin-left: 0;
+        padding: 40px 30px;
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+        header h1 {
+            font-size: 20px;
+        }
+    }
