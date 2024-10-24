@@ -552,48 +552,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* View Portfolio Button - Light Theme */
-.light-theme .view-portfolio-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text */
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-}
-
-.light-theme .view-portfolio-btn:hover {
-    background-color: #333333; /* Dark grey on hover */
-    color: #ffffff;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Larger drop shadow */
-}
-
-/* View Portfolio Button - Dark Theme */
-.dark-theme .view-portfolio-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text */
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Drop shadow */
-}
-
-.dark-theme .view-portfolio-btn:hover {
-    background-color: #cccccc; /* Light grey on hover */
-    color: #000000;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Larger drop shadow */
-}
-
 /* Dark theme improvements */
 .dark-theme header {
     background-color: #000000; /* Same black color for header */
@@ -643,32 +601,67 @@ footer {
     background-color: black;
 }
 
-/* Tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 50px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: var(--highlight-color);
-    color: var(--highlight-text-color);
+#home .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.1); /* Drop shadow with glow */
+    transition: background 0.3s, box-shadow 0.3s;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    border-left: 5px solid var(--highlight-color); /* Highlight on the left */
+    border-right: 5px solid var(--highlight-color); /* Highlight on the right */
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+#home h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+#home p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Light Theme */
+.light-theme #home .container {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)); /* Gradient for light theme */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.5); /* Drop shadow with light glow */
+    border-left: 5px solid #ccc; /* Light highlight on the left */
+    border-right: 5px solid #ccc; /* Light highlight on the right */
+}
+
+.light-theme #home h1, .light-theme #home p {
+    color: #333;
+}
+
+/* Dark Theme */
+.dark-theme #home .container {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)); /* Gradient for dark theme */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2), 0 0 15px rgba(255, 255, 255, 0.1); /* Drop shadow with dark glow */
+    border-left: 5px solid #444; /* Dark highlight on the left */
+    border-right: 5px solid #444; /* Dark highlight on the right */
+}
+
+.dark-theme #home h1, .dark-theme #home p {
+    color: #fff;
 }
 
 /* No Project Section */
@@ -700,7 +693,72 @@ footer {
     animation: fadeInUp 1s ease-in-out;
 }
 
-#no-project .view-portfolio-btn {
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 50px;
+    background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#home .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.1); /* Drop shadow with glow */
+    transition: background 0.3s, box-shadow 0.3s;
+    text-align: center;
+    border-left: 5px solid var(--highlight-color); /* Highlight on the left */
+    border-right: 5px solid var(--highlight-color); /* Highlight on the right */
+}
+
+#home h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+#home p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Light Theme */
+.light-theme #home .container {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)); /* Gradient for light theme */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.5); /* Drop shadow with light glow */
+    border-left: 5px solid #ccc; /* Light highlight on the left */
+    border-right: 5px solid #ccc; /* Light highlight on the right */
+}
+
+.light-theme #home h1, .light-theme #home p {
+    color: #333;
+}
+
+/* Dark Theme */
+.dark-theme #home .container {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)); /* Gradient for dark theme */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2), 0 0 15px rgba(255, 255, 255, 0.1); /* Drop shadow with dark glow */
+    border-left: 5px solid #444; /* Dark highlight on the left */
+    border-right: 5px solid #444; /* Dark highlight on the right */
+}
+
+.dark-theme #home h1, .dark-theme #home p {
+    color: #fff;
+}
+
+/* View Portfolio Button */
+.view-portfolio-btn {
     display: inline-block;
     padding: 15px 40px;
     background-color: var(--button-background-color);
@@ -713,11 +771,33 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
 }
 
-#no-project .view-portfolio-btn:hover {
+.view-portfolio-btn:hover {
     background-color: var(--highlight-color);
     color: var(--highlight-text-color);
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Larger drop shadow */
+}
+
+/* Dark Theme */
+.dark-theme .view-portfolio-btn {
+    background-color: #333333; /* Dark grey background */
+    color: #ffffff; /* White text */
+}
+
+.dark-theme .view-portfolio-btn:hover {
+    background-color: #555555; /* Slightly lighter grey on hover */
+    color: #ffffff;
+}
+
+/* Light Theme */
+.light-theme .view-portfolio-btn {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+}
+
+.light-theme .view-portfolio-btn:hover {
+    background-color: #cccccc; /* Light grey on hover */
+    color: #000000;
 }
 
 /* Light Theme */
