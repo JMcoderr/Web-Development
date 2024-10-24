@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -23,10 +23,10 @@
                 <li><a href="portfolio.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <!-- Theme toggle buttons -->
+            <!-- Theme toggle slider -->
             <div class="theme-toggle">
-                <button id="light-mode"><i class="fas fa-sun"></i></button>
-                <button id="dark-mode"><i class="fas fa-moon"></i></button>
+                <input type="checkbox" id="theme-toggle-checkbox">
+                <label class="slider" for="theme-toggle-checkbox"></label>
             </div>
         </nav>
     </header>
@@ -86,23 +86,20 @@
         });
 
         // Theme toggle functionality
-        document.getElementById('light-mode').addEventListener('click', function() {
-            document.documentElement.classList.remove('dark-theme');
-            document.documentElement.classList.add('light-theme');
-            localStorage.setItem('theme', 'light');
-        });
-
-        document.getElementById('dark-mode').addEventListener('click', function() {
-            document.documentElement.classList.remove('light-theme');
-            document.documentElement.classList.add('dark-theme');
-            localStorage.setItem('theme', 'dark');
+        document.getElementById('theme-toggle-checkbox').addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
         });
 
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.classList.add(savedTheme + '-theme');
-        } else {
-            document.documentElement.classList.add('light-theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            document.getElementById('theme-toggle-checkbox').checked = true;
         }
     </script>
 </body>

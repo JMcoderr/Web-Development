@@ -11,9 +11,16 @@
         (function() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
-                document.documentElement.classList.add(savedTheme + '-theme');
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.body.classList.add(savedTheme + '-theme');
+                    if (savedTheme === 'dark') {
+                        document.getElementById('theme-toggle-checkbox').checked = true;
+                    }
+                });
             } else {
-                document.documentElement.classList.add('light-theme');
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.body.classList.add('light-theme');
+                });
             }
         })();
     </script>
