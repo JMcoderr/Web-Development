@@ -190,6 +190,11 @@ main {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 .project:hover {
@@ -201,18 +206,51 @@ main {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.project img:hover {
+    transform: scale(1.05);
 }
 
 .project h3 {
     font-size: 24px;
-    margin: 15px;
+    margin: 15px 0;
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .project p {
     font-size: 16px;
-    margin: 15px;
+    margin: 10px 0;
     color: var(--text-color);
+    line-height: 1.5;
+}
+
+.project a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project a:hover {
+    text-decoration: none;
+}
+
+.project .technologies, .project .year, .project .client, .project .status {
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.project .technologies strong, .project .year strong, .project .client strong, .project .status strong {
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* Light Theme */
@@ -394,7 +432,7 @@ footer {
         height: 80px;
     }
 
-        header h1 {
-            font-size: 20px;
-        }
+    header h1 {
+        font-size: 20px;
     }
+}
