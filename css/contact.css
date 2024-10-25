@@ -138,7 +138,7 @@ header nav a:hover {
     display: none;
 }
 
-.theme-toggle input:checked + .slider {
+theme-toggle input:checked + .slider {
     background-color: var(--primary-color);
 }
 
@@ -220,7 +220,7 @@ main {
     border-radius: 6px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
     background-color: var(--button-background-color);
-    color: var (--button-text-color);
+    color: var(--button-text-color);
     border: 2px solid var(--button-border-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
 }
@@ -263,68 +263,69 @@ footer {
 
 /* Dark Theme */
 .dark-theme {
-    --background-color: #000000;
-    --text-color: #ffffff;
-    --header-background-color: #000000;
-    --footer-background-color: #000000;
-    --main-background-color: #000000;
-    --background-gradient-color: #000000;
-    --primary-color: #ffffff;
-    --highlight-color: #333333;
-    --highlight-text-color: #ffffff;
-    --button-background-color: #ffffff;
-    --button-text-color: #000000;
-    --button-border-color: #ffffff;
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #1e1e1e;
+    --footer-background-color: #1e1e1e;
+    --main-background-color: #1e1e1e;
+    --background-gradient-color: #2c2c2c;
+    --primary-color: #bb86fc;
+    --highlight-color: #03dac6;
+    --highlight-text-color: #121212;
 }
 
 .dark-theme header {
-    box-shadow: 2px 0 8px rgba(255, 255, 255, 0.1);
+    background-color: #1e1e1e; /* Darker header background */
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
 }
 
 .dark-theme main {
-    background: linear-gradient(135deg, #121212 0%, #1f1f1f 100%);
+    background-color: var(--main-background-color);
+    background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
 }
 
 .dark-theme footer {
+    background-color: #1e1e1e; /* Darker footer background */
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
 }
 
-.dark-theme header nav a:hover {
-    background-color: var(--highlight-color);
-    color: var(--highlight-text-color);
-    transform: translateX(10px);
+.dark-theme .theme-toggle button {
+    color: var(--highlight-color);
 }
 
-.dark-theme #contact {
-    background: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Light drop shadow */
+.dark-theme #contact .container {
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.dark-theme #contact h2 {
-    color: var(--primary-color);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+.dark-theme #contact .container:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
 }
 
-.dark-theme #contact p, .dark-theme #contact ul {
-    color: var(--text-color);
+.dark-theme #contact h2, .dark-theme #contact p, .dark-theme #contact ul {
+    color: #e0e0e0;
 }
 
 .dark-theme #contact form input, .dark-theme #contact form textarea {
-    background-color: #1f1f1f;
-    border: 1px solid var(--primary-color);
-    color: var(--text-color);
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #e0e0e0;
 }
 
 .dark-theme #contact form button {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
-    border: 2px solid var(--button-border-color);
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Light drop shadow */
+    background-color: var(--highlight-color);
+    color: var(--highlight-text-color);
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Light drop shadow */
 }
 
 .dark-theme #contact form button:hover {
-    background-color: var(--highlight-color);
-    color: var(--highlight-text-color);
+    background-color: var(--highlight-text-color);
+    color: var(--highlight-color);
     transform: translateY(-3px);
 }
 

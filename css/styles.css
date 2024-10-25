@@ -495,18 +495,72 @@ footer {
 
 /* Dark Theme */
 .dark-theme {
-    --background-color: #000000;
-    --text-color: #ffffff;
-    --header-background-color: #000000;
-    --footer-background-color: #000000;
-    --main-background-color: #000000;
-    --background-gradient-color: #000000;
-    --primary-color: #ffffff;
-    --highlight-color: #333333;
-    --highlight-text-color: #ffffff;
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #1e1e1e;
+    --footer-background-color: #1e1e1e;
+    --main-background-color: #1e1e1e;
+    --background-gradient-color: #2c2c2c;
+    --primary-color: #bb86fc;
+    --highlight-color: #03dac6;
+    --highlight-text-color: #121212;
     --button-background-color: #ffffff;
     --button-text-color: #000000;
     --button-border-color: #ffffff;
+}
+
+.dark-theme header {
+    background-color: #1e1e1e; /* Darker header background */
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+.dark-theme main {
+    background-color: var(--main-background-color);
+    background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
+}
+
+.dark-theme footer {
+    background-color: #1e1e1e; /* Darker footer background */
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+.dark-theme .theme-toggle button {
+    color: var(--highlight-color);
+}
+
+.dark-theme .project {
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .project:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+}
+
+.dark-theme .project img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Light drop shadow */
+}
+
+.dark-theme #back-to-top {
+    background-color: var(--highlight-color);
+    color: var(--highlight-text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Light drop shadow */
+}
+
+.dark-theme .theme-toggle .slider {
+    background-color: var(--highlight-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider {
+    background-color: var(--highlight-text-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider::before {
+    background-color: var(--highlight-color);
 }
 
 /* Custom Scrollbar */
