@@ -329,6 +329,18 @@ footer {
     transform: translateY(-3px);
 }
 
+.dark-theme .theme-toggle .slider {
+    background-color: var(--highlight-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider {
+    background-color: var(--highlight-text-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider::before {
+    background-color: var(--highlight-color);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     main {
