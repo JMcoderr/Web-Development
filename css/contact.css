@@ -297,12 +297,12 @@ footer {
     color: var(--highlight-color);
 }
 
-.dark-theme #contact .container {
-    background: rgba(30, 30, 30, 0.9);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+.dark-theme #contact {
+    background: rgba(30, 30, 30, 0.9); /* Dark background with transparency */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Drop shadow */
 }
 
-.dark-theme #contact .container:hover {
+.dark-theme #contact:hover {
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
 }
 
