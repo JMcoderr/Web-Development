@@ -32,7 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 30px 20px;
-    background-color: var(--header-background-color);
+    background-color: var(--header-background-color); /* Use header background color */
     width: 240px;
     height: 100vh;
     position: fixed;
@@ -159,15 +159,179 @@ main {
     background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
 }
 
+/* Footer Styling */
+footer {
+    background-color: var(--footer-background-color);
+    padding: 30px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Make footer span the entire horizontal page */
+    left: 0; /* Adjust left position */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--footer-background-color) 0%, var(--background-gradient-color) 100%);
+}
+
+/* Light Theme */
+.light-theme header {
+    background-color: #f0f0f0;;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Dark text color for contrast */
+    --background-gradient-color: #f7f7f7;
+}
+
+.light-theme footer {
+    --footer-background-color: #f0f0f0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Dark text color for contrast */
+    --background-gradient-color: #f7f7f7;
+    opacity: 1; /* Ensure footer is not see-through */
+}
+
+/* Dark Theme */
+.dark-theme {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #1e1e1e;
+    --footer-background-color: #1e1e1e;
+    --main-background-color: #1e1e1e;
+    --background-gradient-color: #2c2c2c;
+    --primary-color: #bb86fc;
+    --highlight-color: #03dac6;
+    --highlight-text-color: #121212;
+}
+
+.dark-theme header {
+    background-color: #1e1e1e; /* Darker header background */
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+.dark-theme main {
+    background-color: var(--main-background-color);
+    background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
+}
+
+.dark-theme footer {
+    background-color: #1e1e1e; /* Darker footer background */
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0; /* Light text color for contrast */
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+.dark-theme .theme-toggle button {
+    color: var(--highlight-color);
+}
+
+.dark-theme .project {
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .project:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+}
+
+.dark-theme .project img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Light drop shadow */
+}
+
+.dark-theme #back-to-top {
+    background-color: var(--highlight-color);
+    color: var(--highlight-text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Light drop shadow */
+}
+
+.dark-theme .theme-toggle .slider {
+    background-color: var(--highlight-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider {
+    background-color: var(--highlight-text-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider::before {
+    background-color: var(--highlight-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    border: 3px solid var(--background-color);
+}
+
+/* Scroll Progress Indicator */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--highlight-color);
+    z-index: 1000;
+    transition: width 0.25s;
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--primary-color);
+    color: var(--highlight-text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: transform 0.3s;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    main {
+        margin-left: 0;
+        padding: 40px 30px;
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
+
 /* Portfolio Section */
 #portfolio .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 50px;
-    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    transition: background 0.3s, box-shadow 0.3s;
 }
 
 #portfolio h2 {
@@ -261,178 +425,4 @@ main {
 
 .light-theme #portfolio h2, .light-theme .project h3, .light-theme .project p {
     color: #333;
-}
-
-/* Dark Theme */
-.dark-theme #portfolio .container {
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-}
-
-.dark-theme #portfolio h2, .dark-theme .project h3, .dark-theme .project p {
-    color: #fff;
-}
-
-/* Footer Styling */
-footer {
-    background-color: var(--footer-background-color);
-    padding: 30px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%; /* Make footer span the entire horizontal page */
-    left: 0; /* Adjust left position */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    color: var(--text-color);
-    background: linear-gradient(135deg, var(--footer-background-color) 0%, var(--background-gradient-color) 100%);
-}
-
-/* Light Theme */
-:root {
-    --background-color: #ffffff;
-    --text-color: #333;
-    --header-background-color: #f0f0f0;
-    --footer-background-color: #f0f0f0;
-    --main-background-color: #ffffff;
-    --background-gradient-color: #f7f7f7;
-    --primary-color: #333;
-    --highlight-color: #666666;
-    --highlight-text-color: #ffffff;
-}
-
-/* Dark Theme */
-.dark-theme {
-    --background-color: #000000;
-    --text-color: #ffffff;
-    --header-background-color: #000000;
-    --footer-background-color: #000000;
-    --main-background-color: #000000;
-    --background-gradient-color: #000000;
-    --primary-color: #ffffff;
-    --highlight-color: #333333;
-    --highlight-text-color: #ffffff;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--highlight-color);
-    border-radius: 20px;
-    border: 3px solid var(--background-color);
-}
-
-/* Scroll Progress Indicator */
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--highlight-color);
-    z-index: 1000;
-    transition: width 0.25s;
-}
-
-/* Back-to-Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: var(--primary-color);
-    color: var(--highlight-text-color);
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    transition: transform 0.3s;
-}
-
-#back-to-top:hover {
-    transform: scale(1.1);
-}
-
-/* Dark theme improvements */
-.dark-theme header {
-    background-color: #000000; /* Same black color for header */
-    box-shadow: 2px 0 8px rgba(255, 255, 255, 0.1);
-}
-
-.dark-theme main {
-    background-color: #121212; /* Darker main background */
-    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-}
-
-.dark-theme footer {
-    background-color: #000000; /* Same black color for footer */
-    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.dark-theme .theme-toggle button {
-    color: white; /* White theme toggle buttons */
-}
-
-.dark-theme .project {
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-}
-
-.dark-theme .project:hover {
-    box-shadow: 0 16px 32px rgba(255, 255, 255, 0.3);
-}
-
-.dark-theme .project img {
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Light drop shadow */
-}
-
-.dark-theme #back-to-top {
-    background-color: white; /* White background for dark theme */
-    color: black; /* Black text for contrast */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Light drop shadow */
-}
-
-/* Dark theme styles */
-.dark-theme .theme-toggle .slider {
-    background-color: #333;
-}
-
-.dark-theme .theme-toggle input:checked + .slider {
-    background-color: white;
-}
-
-.dark-theme .theme-toggle input:checked + .slider::before {
-    background-color: black;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    main {
-        margin-left: 0;
-        padding: 40px 30px;
-    }
-
-    header {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        box-shadow: none;
-    }
-
-    header nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    header img {
-        width: 80px;
-        height: 80px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
 }

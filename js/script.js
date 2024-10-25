@@ -7,6 +7,52 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = `${scrollPercent}%`;
 });
 
+// Smooth scroll for back-to-top button
+const backToTopButton = document.getElementById('back-to-top');
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Show back-to-top button on scroll
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    if (scrollTop > 250) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+// Theme toggle
+const themeToggleCheckbox = document.getElementById('theme-toggle-checkbox');
+const body = document.body;
+
+themeToggleCheckbox.addEventListener('change', function () {
+    if (themeToggleCheckbox.checked) {
+        body.classList.add('dark-theme');
+        body.classList.remove('light-theme');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.classList.add('light-theme');
+        body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// Initialize the theme based on the saved preference
+document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme + '-theme');
+        themeToggleCheckbox.checked = savedTheme === 'dark';
+    } else {
+        body.classList.add('light-theme');
+    }
+});
+
 // Smooth scrolling for internal links
 const links = document.querySelectorAll('a[href^="#"]');
 for (const link of links) {
@@ -36,40 +82,4 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     
     // Clear the form
     document.getElementById('contact-form').reset();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const themeToggleCheckbox = document.getElementById('theme-toggle-checkbox');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.body.classList.add(currentTheme + '-theme');
-
-    if (currentTheme === 'dark') {
-        themeToggleCheckbox.checked = true;
-    }
-
-    themeToggleCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-            document.body.classList.remove('light-theme');
-            document.body.classList.add('dark-theme');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.remove('dark-theme');
-            document.body.classList.add('light-theme');
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
-    // Back-to-top button functionality
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
-
-    backToTopButton.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
 });
