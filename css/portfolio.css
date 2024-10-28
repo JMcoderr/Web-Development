@@ -279,26 +279,6 @@ footer {
     transition: width 0.25s;
 }
 
-/* Back-to-Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: var(--primary-color);
-    color: var(--highlight-text-color);
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    transition: transform 0.3s;
-}
-
-#back-to-top:hover {
-    transform: scale(1.1);
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
     main {
