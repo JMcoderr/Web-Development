@@ -324,10 +324,13 @@ footer {
 /* Ensure email, LinkedIn, GitHub, and phone number text are the same purple as the icons */
 .dark-theme .contact-list li a {
     color: #bb86fc; /* Purple color for text */
+    text-decoration: underline; /* Underline to indicate clickable link */
+    transition: color 0.3s, text-decoration 0.3s;
 }
 
 .dark-theme .contact-list li a:hover {
     color: #d4a1ff; /* Lighter purple on hover */
+    text-decoration: none; /* Remove underline on hover */
 }
 
 .dark-theme #contact h2 {
@@ -393,18 +396,21 @@ footer {
     transition: color 0.3s;
 }
 
-.contact-list li a:hover {
-    color: #555555; /* Darker grey on hover */
-}
-
 /* Light Theme */
 .light-theme .contact-list {
     color: #000000;
 }
 
-.light-theme .contact-list li i,
+/* Light Theme */
 .light-theme .contact-list li a {
-    color: #000000; /* Black color for icons and text */
+    color: #000000; /* Black color for text */
+    text-decoration: underline; /* Underline to indicate clickable link */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.light-theme .contact-list li a:hover {
+    color: #555555; /* Darker grey on hover */
+    text-decoration: none; /* Remove underline on hover */
 }
 
 /* Responsive Styles */
