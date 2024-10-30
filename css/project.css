@@ -516,4 +516,14 @@ footer {
     .header-toggle {
         display: block;
     }
+
+    .header-content {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content.active {
+        display: flex;
+    }
 }
