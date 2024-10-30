@@ -82,3 +82,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Clear the form
     document.getElementById('contact-form').reset();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const headerToggle = document.querySelector('.header-toggle');
+    const headerContent = document.querySelector('.header-content');
+
+    headerToggle.addEventListener('click', function() {
+        headerContent.classList.toggle('active');
+    });
+});
