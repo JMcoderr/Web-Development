@@ -321,6 +321,15 @@ footer {
     color: #bb86fc;
 }
 
+/* Ensure email, LinkedIn, GitHub, and phone number text are the same purple as the icons */
+.dark-theme .contact-list li a {
+    color: #bb86fc; /* Purple color for text */
+}
+
+.dark-theme .contact-list li a:hover {
+    color: #d4a1ff; /* Lighter purple on hover */
+}
+
 .dark-theme #contact h2 {
     color: #bb86fc; /* Purple color for "Contact Me" heading */
 }
