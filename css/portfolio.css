@@ -551,3 +551,24 @@ footer {
         font-size: 10px;
     }
 }
+
+/* Hide header toggle button on desktop */
+.header-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-toggle {
+        display: block;
+    }
+
+    .header-content {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content.active {
+        display: flex;
+    }
+}
