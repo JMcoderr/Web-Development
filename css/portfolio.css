@@ -399,22 +399,6 @@ footer {
     width: 100%;
 }
 
-/* Ensure header retains full width in dark mode */
-.dark-theme header {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    box-shadow: none;
-    position: relative;
-}
-
-.dark-theme .header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
     main {
@@ -580,5 +564,23 @@ footer {
 
     .project p {
         font-size: 10px;
+    }
+}
+
+/* Ensure header retains full width in dark mode on mobile and tablet devices */
+@media (max-width: 768px) {
+    .dark-theme header {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: none;
+        position: relative;
+    }
+
+    .dark-theme .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 }
