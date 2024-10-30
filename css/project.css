@@ -497,7 +497,7 @@ footer {
     }
 
     .header-content {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -512,6 +512,10 @@ footer {
         font-size: 18px;
     }
 
+    header ul li {
+        margin: 5px 0;
+    }
+    
     #portfolio h2 {
         font-size: 22px;
     }
