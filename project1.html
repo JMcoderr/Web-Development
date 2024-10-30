@@ -11,7 +11,16 @@
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- JavaScript for theme toggle and back-to-top functionality -->
-    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/theme-toggle.js" defer>
+    document.addEventListener('DOMContentLoaded', function() {
+        const headerToggle = document.querySelector('.header-toggle');
+        const headerContent = document.querySelector('.header-content');
+
+        headerToggle.addEventListener('click', function() {
+            headerContent.classList.toggle('active');
+        });
+    });
+    </script>
 </head>
 <body>
     <!-- Header section with navigation -->
