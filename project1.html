@@ -28,6 +28,20 @@
                     localStorage.setItem('theme', 'light');
                 }
             });
+
+            // Back to Top button functionality
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
 </head>
@@ -61,14 +75,50 @@
             <h2>Portfolio Web Page</h2>
             <div class="project-details">
                 <img src="images/webdevelopment1.jpg" alt="Project 1">
-                <p>This is my first project where I made a portfolio page for all my upcoming projects.</p>
-                <p class="technologies"><strong>Technologies: HTML/CSS, JS, PHP and MYSQL</strong></p>
-                <p class="year"><strong>Year: 2024</strong></p>
-                <p class="client"><strong>Client: Education</strong></p>
-                <p class="status"><strong>Status: In Progress</strong></p>
+                <div class="project-info">
+                    <h3>Project Overview</h3>
+                    <p>This project showcases a portfolio website with a modern design and smooth scrolling. It includes sections for home, about me, projects, and contact. The website is fully responsive and features a dark/light theme toggle for better user experience. The goal was to create a visually appealing and user-friendly platform to display my work and skills.</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>MySQL/PHP</li>
+                        <li>Font Awesome</li>
+                        <li>Google Fonts</li>
+                    </ul>
+                    
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Responsive design</li>
+                        <li>Dark/Light theme toggle</li>
+                        <li>Smooth scrolling</li>
+                        <li>Interactive navigation</li>
+                        <li>Profile image and personal introduction</li>
+                    </ul>
+                    
+                    <h3>Challenges and Solutions</h3>
+                    <p>One challenge was ensuring the contact form integrated smoothly with the MySQL database. I created a PHP file to manage the connection and troubleshoot any issues during the setup. Testing in XAMPP helped me identify and resolve errors before deploying the website.</p>
+                    
+                    <h3>Future Improvements</h3>
+                    <p>Future improvements could include adding more interactive elements such as animations and transitions, integrating a blog section, and enhancing the contact form with validation and backend integration. Additionally, I plan to continuously update the portfolio with new projects and skills as I progress in my career.</p>
+                    
+                    <h3>Reflection</h3>
+                    <p>Building this portfolio has been a rewarding experience, combining both my technical skills and creativity. It allowed me to apply what I’ve learned in HTML, CSS, JavaScript, PHP, and MySQL, bringing my vision to life and creating a digital space I’m proud to share with others.</p>
+
+                    <a href="https://github.com/JMcoderr/Web-Development" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Back to Top button -->
+    <button id="back-to-top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Footer section -->
     <footer>

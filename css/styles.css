@@ -95,7 +95,6 @@ header nav a:hover {
     padding-top: 20px;
 }
 
-
 .theme-toggle button {
     background: none;
     border: none;
@@ -145,7 +144,8 @@ header nav a:hover {
 
 .theme-toggle input:checked + .slider::before {
     content: '🌙'; /* Moon emoji */
-    transform: translateX(30px);
+    transform: translateX(30px);    
+    background-color: black; /* Set background color to black */
 }
 
 /* Main Content Styling */

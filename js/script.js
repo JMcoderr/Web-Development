@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = `${scrollPercent}%`;
 });
 
-// Smooth scroll for back-to-top button
+// Smooth scroll for back-to-top button and show on scroll
 const backToTopButton = document.getElementById('back-to-top');
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({
@@ -16,7 +16,6 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Show back-to-top button on scroll
 window.addEventListener('scroll', () => {
     const scrollTop = document.documentElement.scrollTop;
     if (scrollTop > 250) {

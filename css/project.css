@@ -32,7 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 30px 20px;
-    background-color: var(--header-background-color); /* Use header background color */
+    background-color: var(--header-background-color);
     width: 240px;
     height: 100vh;
     position: fixed;
@@ -41,7 +41,7 @@ header {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     transition: width 0.3s ease-in-out;
-    backdrop-filter: blur(10px); /* Slight transparency */
+    backdrop-filter: blur(10px);
 }
 
 header:hover {
@@ -78,8 +78,8 @@ header nav a:hover {
 }
 
 .light-theme header nav a:hover {
-    background-color: grey; /* Grey color for light theme hover */
-    color: white; /* Text turns white on hover in light theme */
+    background-color: grey;
+    color: white;
     transform: translateX(10px);
 }
 
@@ -87,8 +87,8 @@ header h1 {
     font-size: 24px;
     margin-bottom: 30px;
     color: var(--primary-color);
-    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
-    font-weight: bold; /* Make the text bold */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 /* Theme Toggle */
@@ -136,7 +136,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .theme-toggle input {
@@ -150,6 +150,7 @@ header h1 {
 .theme-toggle input:checked + .slider::before {
     content: '🌙'; /* Moon emoji */
     transform: translateX(30px);
+    background-color:#03dac6 !important;;
 }
 
 /* Main Content Styling */
@@ -177,7 +178,7 @@ main {
 }
 
 .project-details img {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
     border-radius: 8px;
@@ -201,6 +202,43 @@ main {
     color: var(--primary-color);
 }
 
+.project-info {
+    text-align: left;
+    width: 100%;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+
+.project-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.project-info a i {
+    margin-right: 8px;
+}
+
+.project-info a:hover {
+    color: var(--highlight-color);
+}
+
+.project-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.project-info p, .project-info ul {
+    margin-bottom: 20px;
+}
+
 /* Footer Styling */
 footer {
     background-color: var(--footer-background-color);
@@ -208,8 +246,8 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
-    width: 100%; /* Make footer span the entire horizontal page */
-    left: 0; /* Adjust left position */
+    width: 100%;
+    left: 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     background: linear-gradient(135deg, var(--footer-background-color) 0%, var(--background-gradient-color) 100%);
@@ -219,16 +257,32 @@ footer {
 .light-theme header {
     background-color: #f0f0f0;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-    color: #333333; /* Dark text color for contrast */
+    color: #333333;
     --background-gradient-color: #f7f7f7;
 }
 
 .light-theme footer {
     --footer-background-color: #f0f0f0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    color: #333333; /* Dark text color for contrast */
+    color: #333333;
     --background-gradient-color: #f7f7f7;
-    opacity: 1; /* Ensure footer is not see-through */
+    opacity: 1;
+}
+
+/* Light Theme */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --header-background-color: #f0f0f0;
+    --footer-background-color: #f0f0f0;
+    --main-background-color: #ffffff;
+    --background-gradient-color: #f7f7f7;
+    --primary-color: #333;
+    --highlight-color: #666666;
+    --highlight-text-color: #ffffff;
+    --button-background-color: #f0f0f0;
+    --button-text-color: #000000;
+    --button-border-color: #333;
 }
 
 /* Dark Theme */
@@ -242,12 +296,15 @@ footer {
     --primary-color: #bb86fc;
     --highlight-color: #03dac6;
     --highlight-text-color: #121212;
+    --button-background-color: #ffffff;
+    --button-text-color: #000000;
+    --button-border-color: #ffffff;
 }
 
 .dark-theme header {
-    background-color: #1e1e1e; /* Darker header background */
+    background-color: #1e1e1e;
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
-    color: #e0e0e0; /* Light text color for contrast */
+    color: #e0e0e0;
     background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
 }
 
@@ -256,15 +313,32 @@ footer {
     background: linear-gradient(135deg, var(--main-background-color) 0%, var(--background-gradient-color) 100%);
 }
 
+.dark-theme .project-details {
+    background: rgba(30, 30, 30, 0.9);
+    color: var(--text-color);
+}
+
 .dark-theme footer {
-    background-color: #1e1e1e; /* Darker footer background */
+    background-color: #1e1e1e;
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
-    color: #e0e0e0; /* Light text color for contrast */
+    color: #e0e0e0;
     background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
 }
 
 .dark-theme .theme-toggle button {
     color: var(--highlight-color);
+}
+
+.dark-theme .theme-toggle .slider {
+    background-color: black;
+}
+
+.dark-theme .theme-toggle input:checked + .slider {
+    background-color: var(--highlight-text-color);
+}
+
+.dark-theme .theme-toggle input:checked + .slider::before {
+    background-color: black;
 }
 
 /* Custom Scrollbar */
@@ -288,6 +362,29 @@ footer {
     background: var(--highlight-color);
     z-index: 1000;
     transition: width 0.25s;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
