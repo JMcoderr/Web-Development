@@ -473,7 +473,7 @@ footer {
     }
 
     .project-details {
-        padding-bottom: 50px; /* Ensure enough space for buttons */
+        padding-bottom: 100px; /* Ensure enough space for buttons */
     }
 }
 
