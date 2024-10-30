@@ -489,23 +489,6 @@ footer {
         padding: 20px 10px;
     }
 
-    header img {
-        width: 60px;
-        height: 60px;
-    }
-
-    header h1 {
-        font-size: 18px;
-    }
-
-    #contact h2 {
-        font-size: 22px;
-    }
-
-    #contact p, #contact ul, #contact form label {
-        font-size: 12px;
-    }
-
     /* Make header clickable */
     header {
         position: relative;
@@ -525,9 +508,28 @@ footer {
 
     .header-content {
         display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     .header-content.active {
         display: flex;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    #contact h2 {
+        font-size: 22px;
+    }
+
+    #contact p, #contact ul, #contact form label {
+        font-size: 12px;
     }
 }

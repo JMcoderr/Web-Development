@@ -521,6 +521,8 @@ footer {
 
     .header-content {
         display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     .header-content.active {

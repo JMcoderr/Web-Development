@@ -499,10 +499,11 @@ footer {
         padding: 20px 10px;
     }
 
+    /* Make header clickable */
     header {
         position: relative;
     }
-    
+
     .header-toggle {
         display: block;
         position: absolute;
@@ -514,11 +515,13 @@ footer {
         cursor: pointer;
         z-index: 1000;
     }
-    
+
     .header-content {
         display: none;
+        flex-direction: column;
+        align-items: center;
     }
-    
+
     .header-content.active {
         display: flex;
     }
