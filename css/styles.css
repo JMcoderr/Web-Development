@@ -323,127 +323,6 @@ main {
     color: var(--text-color);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    main {
-        margin-left: 0;
-        padding: 40px 30px;
-    }
-
-    header {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        box-shadow: none;
-    }
-
-    header nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    header img {
-        width: 80px;
-        height: 80px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    header ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    header ul li {
-        margin: 0 10px;
-    }
-
-    header .theme-toggle {
-        margin-top: 0;
-    }
-
-    #about .container {
-        padding: 30px;
-    }
-
-    #about h2 {
-        font-size: 30px;
-    }
-
-    #about .skills-summary h3, #about .experience h3 {
-        font-size: 24px;
-    }
-
-    #about .bio p, #about .skills-summary ul li, #about .experience p {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        padding: 30px 20px;
-    }
-
-    header nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header ul li {
-        margin: 10px 0;
-    }
-
-    #about .container {
-        padding: 20px;
-    }
-
-    #about h2 {
-        font-size: 26px;
-    }
-
-    #about .skills-summary h3, #about .experience h3 {
-        font-size: 20px;
-    }
-
-    #about .bio p, #about .skills-summary ul li, #about .experience p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 20px 10px;
-    }
-
-    header img {
-        width: 60px;
-        height: 60px;
-    }
-
-    header h1 {
-        font-size: 18px;
-    }
-
-    #about h2 {
-        font-size: 22px;
-    }
-
-    #about .skills-summary h3, #about .experience h3 {
-        font-size: 18px;
-    }
-
-    #about .bio p, #about .skills-summary ul li, #about .experience p {
-        font-size: 12px;
-    }
-}
-
 /* Home Section */
 .home-content {
     display: flex;
@@ -966,4 +845,125 @@ footer {
 
 .dark-theme .theme-toggle input:checked + .slider::before {
     background-color: var(--highlight-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    main {
+        margin-left: 0;
+        padding: 40px 30px;
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    header ul li {
+        margin: 0 10px;
+    }
+
+    header .theme-toggle {
+        margin-top: 0;
+    }
+
+    #about .container {
+        padding: 30px;
+    }
+
+    #about h2 {
+        font-size: 30px;
+    }
+
+    #about .skills-summary h3, #about .experience h3 {
+        font-size: 24px;
+    }
+
+    #about .bio p, #about .skills-summary ul li, #about .experience p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 30px 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    #about .container {
+        padding: 20px;
+    }
+
+    #about h2 {
+        font-size: 26px;
+    }
+
+    #about .skills-summary h3, #about .experience h3 {
+        font-size: 20px;
+    }
+
+    #about .bio p, #about .skills-summary ul li, #about .experience p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px 10px;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    #about h2 {
+        font-size: 22px;
+    }
+
+    #about .skills-summary h3, #about .experience h3 {
+        font-size: 18px;
+    }
+
+    #about .bio p, #about .skills-summary ul li, #about .experience p {
+        font-size: 12px;
+    }
 }
