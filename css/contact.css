@@ -319,7 +319,6 @@ footer {
 
 .dark-theme #contact ul {
     color: #bb86fc;
-
 }
 
 .dark-theme #contact h2 {
@@ -362,36 +361,23 @@ footer {
     background-color: var(--highlight-color);
 }
 
-/* Dark Theme */
-.dark-theme .contact-list {
+/* Common Styles for Both Themes */
+.contact-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.dark-theme .contact-list li {
+.contact-list li {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.dark-theme .contact-list li i {
+.contact-list li i {
     margin-right: 10px;
-    color: #bb86fc; /* Purple color for icons */
 }
 
-.dark-theme .contact-list li a {
-    color: #bb86fc; /* Purple color for text */
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.dark-theme .contact-list li a:hover {
-    color: #d4a1ff; /* Lighter purple on hover */
-}
-
-/* Common Styles for Both Themes */
 .contact-list li a {
     text-decoration: none;
     font-size: 18px;
@@ -404,102 +390,15 @@ footer {
 
 /* Light Theme */
 .light-theme .contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     color: #000000;
 }
 
-.light-theme .contact-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.light-theme .contact-list li i {
-    margin-right: 10px;
-    color: #000000; /* Black color for icons */
-}
-
+.light-theme .contact-list li i,
 .light-theme .contact-list li a {
-    color: #000000; /* Black color for text */
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
+    color: #000000; /* Black color for icons and text */
 }
 
-.light-theme .contact-list li a:hover {
-    color: #555555; /* Darker grey on hover */
-}
-
-/* Contact Section */
-#contact {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px;
-    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    transition: background 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Form Styling */
-#contact form input, #contact form textarea {
-    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
-    font-size: 16px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-}
-
-#contact form input:focus, #contact form textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
-}
-
-/* Hover Effects */
-#contact form button:hover {
-    background-color: var(--highlight-color);
-    color: var(--highlight-text-color);
-    transform: translateY(-3px);
-}
-
-/* Animations */
-#contact form input, #contact form textarea {
-    transition: all 0.3s ease;
-}
-
-#contact form button {
-    transition: all 0.3s ease;
-}
-
-/* Contact Information Section */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.contact-info i {
-    font-size: 24px;
-    color: #bb86fc;
-    margin-bottom: 10px;
-}
-
-.contact-info p {
-    font-size: 18px;
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 1200px) {
     main {
         margin-left: 0;
