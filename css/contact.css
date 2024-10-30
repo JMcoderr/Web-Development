@@ -453,8 +453,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+
     main {
         padding: 30px 20px;
+        overflow-y: auto;
     }
 
     header {
@@ -501,6 +506,10 @@ footer {
 
     #contact p, #contact ul, #contact form label {
         font-size: 14px;
+    }
+
+    .project-details, #contact {
+        padding-bottom: 50px; /* Ensure enough space for buttons */
     }
 }
 

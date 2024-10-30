@@ -430,8 +430,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+
     main {
         padding: 30px 20px;
+        overflow-y: auto;
     }
 
     header {
@@ -465,6 +470,10 @@ footer {
 
     .theme-toggle {
         margin-top: 20px;
+    }
+
+    .project-details {
+        padding-bottom: 50px; /* Ensure enough space for buttons */
     }
 }
 
