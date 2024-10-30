@@ -3,47 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> - Portfolio Website</title>
+    <title>Empty Project - Jordy Meijer</title>
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="css/project.css">
+    <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const themeToggleCheckbox = document.getElementById('theme-toggle-checkbox');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            document.body.classList.add(currentTheme + '-theme');
-
-            if (currentTheme === 'dark') {
-                themeToggleCheckbox.checked = true;
-            }
-
-            themeToggleCheckbox.addEventListener('change', function () {
-                if (this.checked) {
-                    document.body.classList.remove('light-theme');
-                    document.body.classList.add('dark-theme');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.body.classList.remove('dark-theme');
-                    document.body.classList.add('light-theme');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-
-            // Back to Top button functionality
-            const backToTopButton = document.getElementById('back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
-                }
-            });
-
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-    </script>
+    <!-- JavaScript for theme toggle and back-to-top functionality -->
+    <script src="js/theme-toggle.js" defer></script>
 </head>
 <body>
     <!-- Header section with navigation -->
@@ -70,51 +38,16 @@
 
     <!-- Main content section -->
     <main>
-        <!-- Project 1 details -->
-        <section id="project1">
-            <h2></h2>
-            <div class="project-details">
-                <img src="" alt="Project ">
-                <div class="project-info">
-                    <h3>Project Overview</h3>
-                    <p></p>
-                    
-                    <h3>Technologies Used</h3>
-                    <ul>
-                        <li></li>
-                    </ul>
-                    
-                    <h3>Features</h3>
-                    <ul>
-                        <li></li>
-                    </ul>
-                    
-                    <h3>Challenges and Solutions</h3>
-                    <p></p>
-                    
-                    <h3>Future Improvements</h3>
-                    <p></p>
-                    
-                    <h3>Reflection</h3>
-                    <p></p>
-
-                    <a href="Put your github repo here class="github-link" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
+        <!-- Empty project content will go here -->
     </main>
-
-    <!-- Back to Top button -->
-    <button id="back-to-top" title="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
 
     <!-- Footer section -->
     <footer>
         <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
     </footer>
+
+    <!-- Back-to-Top Button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Link to external JavaScript file -->
     <script src="js/script.js"></script>
