@@ -44,9 +44,11 @@ $stmt->bind_param("sss", $name, $email, $message);
 
 // Execute the statement
 if ($stmt->execute()) {
+    header('Content-Type: text/plain');
     echo "Thank you for your message!";
 } else {
     error_log("Error: " . $stmt->error);
+    header('Content-Type: text/plain');
     echo "Error: " . $stmt->error;
 }
 
