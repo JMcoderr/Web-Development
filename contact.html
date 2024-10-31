@@ -60,7 +60,7 @@
                     <a href="tel:+316-10609212">+316-10609212</a>
                 </li>
             </ul>
-            <form id="contact-form" data-netlify="true" method="POST">
+            <form id="contact-form" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -80,15 +80,50 @@
         <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
     </footer>
     <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Show the success message
-        document.getElementById('success-message').style.display = 'block';
-
-        // Optionally, you can hide the form
-        document.getElementById('contact-form').style.display = 'none';
-    });
-</script>
+        // Handle form submission using Fetch API
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get form data
+            var formData = new FormData(this);
+    
+            // Send form data using Fetch API
+            fetch('php/contactform.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Display the response from the server
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem with your submission. Please try again.');
+            });
+        });
+    
+        // Theme toggle functionality
+        document.getElementById('theme-toggle-checkbox').addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            document.getElementById('theme-toggle-checkbox').checked = true;
+        }
+    </script>
 </body>
 </html>
