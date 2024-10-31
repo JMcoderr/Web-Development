@@ -83,25 +83,31 @@
         // Handle form submission using Fetch API
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
-
+    
             // Get form data
             var formData = new FormData(this);
-
+    
             // Send form data using Fetch API
             fetch('php/contactform.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 // Display the response from the server
                 alert(data);
             })
             .catch(error => {
                 console.error('Error:', error);
+                alert('There was a problem with your submission. Please try again.');
             });
         });
-
+    
         // Theme toggle functionality
         document.getElementById('theme-toggle-checkbox').addEventListener('change', function() {
             if (this.checked) {
@@ -112,12 +118,13 @@
                 localStorage.setItem('theme', 'light');
             }
         });
-
+    
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.documentElement.classList.add('dark-theme');
             document.getElementById('theme-toggle-checkbox').checked = true;
         }
     </script>
+
 </body>
 </html>
