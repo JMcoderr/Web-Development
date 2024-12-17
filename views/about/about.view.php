@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/Web-Development-v1/public/css/styles.css">
     <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- JavaScript for theme toggle and back-to-top functionality -->
-    <script src="js/theme-toggle.js" defer></script>
+    <script src="/Web-Development-v1/public/js/theme-toggle.js" defer></script>
 </head>
 <body class="about-page">
     <!-- Header section with navigation -->
@@ -19,15 +19,15 @@
         <div class="header-content">
             <nav>
                 <!-- Profile image -->
-                <img src="images/Portfolio.jpg" alt="Jordy Meijer">
+                <img src="/Web-Development-v1/public/images/Portfolio.jpg" alt="Jordy Meijer">
                 <!-- Your name -->
-                <h1>Jordy Meijer</h1>
+                <h1><?= $name; ?></h1> <!-- Dynamische naam -->
                 <!-- Navigation links -->
                 <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="portfolio.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/Web-Development-v1/public/index.php?url=home/index">Home</a></li>
+                    <li><a href="/Web-Development-v1/public/index.php?url=about/index">About Me</a></li>
+                    <li><a href="/Web-Development-v1/public/index.php?url=project/index">Projects</a></li>
+                    <li><a href="/Web-Development-v1/public/index.php?url=contact/index">Contact</a></li>
                 </ul>
                 <!-- Theme toggle buttons -->
                 <div class="theme-toggle">
@@ -45,35 +45,34 @@
             <div class="container">
                 <h2>About Me</h2>
                 <div class="profile">
-                    <p>Hello! I'm Jordy Meijer, a passionate software developer student at Windesheim Flevoland. I love coding and enjoy learning new technologies.</p>
+                    <p><?= $bio; ?></p> <!-- Dynamische bio -->
                 </div>
                 <div class="bio">
-                    <p>In my free time, I enjoy working out, spending time with my family and friends, working on personal projects and continuously learning new things.</p>
-                    <p>Thank you for visiting my portfolio website. I hope you enjoy exploring my work.</p>
+                    <p><?= $extraInfo; ?></p> <!-- Dynamische extra informatie -->
                 </div>
                 
                 <!-- Skills summary -->
                 <div class="skills-summary">
                     <h3>Skills</h3>
                     <ul>
-                        <li><i class="fas fa-code"></i> Web Development</li>
-                        <li><i class="fab fa-js"></i> JavaScript</li>
-                        <li><i class="fab fa-html5"></i> HTML & CSS</li>
-                        <li><i class="fas fa-database"></i> PHP & MySQL</li>
+                        <li><i class="fas fa-code"></i> <?= $skills['webDev']; ?></li> <!-- Dynamische skill -->
+                        <li><i class="fab fa-js"></i> <?= $skills['js']; ?></li> <!-- Dynamische skill -->
+                        <li><i class="fab fa-html5"></i> <?= $skills['htmlCss']; ?></li> <!-- Dynamische skill -->
+                        <li><i class="fas fa-database"></i> <?= $skills['phpMysql']; ?></li> <!-- Dynamische skill -->
                     </ul>
                     <div class="progress-bar">
-                        <div class="progress" style="width: 60%;">Web Development</div>
-                        <div class="progress" style="width: 50%;">JavaScript</div>
-                        <div class="progress" style="width: 80%;">HTML & CSS</div>
-                        <div class="progress" style="width: 60%;">PHP & MySQL</div>
+                        <div class="progress" style="width: <?= $skills['webDevProgress']; ?>%;">Web Development</div> <!-- Dynamische voortgang -->
+                        <div class="progress" style="width: <?= $skills['jsProgress']; ?>%;">JavaScript</div> <!-- Dynamische voortgang -->
+                        <div class="progress" style="width: <?= $skills['htmlCssProgress']; ?>%;">HTML & CSS</div> <!-- Dynamische voortgang -->
+                        <div class="progress" style="width: <?= $skills['phpMysqlProgress']; ?>%;">PHP & MySQL</div> <!-- Dynamische voortgang -->
                     </div>
                 </div>
 
                 <!-- Experience and CV -->
                 <div class="experience">
                     <h3>Experience</h3>
-                    <p>While I have not yet built any real web applications or websites, I have worked on various projects as part of my studies and personal development. My experience includes front-end and back-end development.</p>
-                    <a href="cv/Jordy_Meijer_CV_2024.pdf" class="view-portfolio-btn" download>Download My CV</a>
+                    <p><?= $experience; ?></p> <!-- Dynamische ervaring -->
+                    <a href="<?= $cvLink; ?>" class="view-portfolio-btn" download>Download My CV</a> <!-- Dynamische link naar CV -->
                 </div>
             </div>
         </section>
@@ -85,7 +84,7 @@
     
     <!-- Footer section -->
     <footer>
-        <p>&copy; 2024 Jordy Meijer. All rights reserved.</p>
+        <p>&copy; 2024 <?= $name; ?>. All rights reserved.</p>
     </footer>
 </body>
 </html>

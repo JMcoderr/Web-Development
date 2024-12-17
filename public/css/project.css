@@ -177,13 +177,16 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Project image styling */
 .project-details img {
-    width: 80%;
-    height: auto;
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    width: 50%; /* Set the desired width as a percentage of the container */
+    height: auto; /* Maintain aspect ratio */
     display: block;
     border-radius: 8px;
     margin-bottom: 15px;
     transition: transform 0.3s;
+    size: 50%;
 }
 
 .project-details img:hover {
